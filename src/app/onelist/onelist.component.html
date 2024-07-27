@@ -1,0 +1,17 @@
+
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>
+<table *ngIf="!loading && !error" class="styled-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let one of onelist">
+      <td>{{ one.id}}</td>
+      <td>{{ one.name }}</td>
+    </tr>
+  </tbody>
+</table>

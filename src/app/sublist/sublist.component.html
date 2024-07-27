@@ -1,0 +1,16 @@
+<table class="styled-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr *ngFor="let task of tasks">
+    <td>{{task.id}}</td>
+    <td>{{task.title}}</td>
+    <td>{{task.completed}}</td>
+</tr>
+</tbody>
+</table>
