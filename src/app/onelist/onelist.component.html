@@ -1,17 +1,29 @@
-
 <div *ngIf="loading">Loading...</div>
 <div *ngIf="error">{{ error }}</div>
+
+<!-- Add Form -->
+<form (ngSubmit)="addItem()" #addForm="ngForm">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="newItem.name" required>
+  <button type="submit">Add Item</button>
+</form>
+
+<!-- Table of Items -->
 <table *ngIf="!loading && !error" class="styled-table">
   <thead>
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let one of onelist">
-      <td>{{ one.id}}</td>
+      <td>{{ one.id }}</td>
       <td>{{ one.name }}</td>
+      <td>
+        <button (click)="removeItem(one.id)">Remove</button>
+      </td>
     </tr>
   </tbody>
 </table>
